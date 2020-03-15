@@ -1,0 +1,20 @@
+type Produto {
+    id:ID,
+    nome:String
+    quantidade:Int
+}
+
+extend type Query {
+    produtoById(id:ID):Produto
+    
+    produtoByNome(nome:String):Produto
+
+    produtoAll:[Produto]
+}
+
+extend type Mutation {
+
+    saveProduto(id:ID, nome:String, quantidade:Int):Produto
+
+    deleteProduto(id:ID):Boolean
+}
